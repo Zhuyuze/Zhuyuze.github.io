@@ -7,7 +7,9 @@ body {
 h1, h2, h3 {
     font-family:Century Gothic, Futura, Verdana, sans-serif;
     color:rgb(126, 156, 255);
-    background-color:rgba(240, 240, 240, 0);}
+    background-color:rgba(240, 240, 240, 0);
+    background-repeat: no-repeat;
+}
 h1 {
     font-size:36pt;
     font-weight:bold;
@@ -28,3 +30,6 @@ h3 {
     }
 ul li {
     list-style: url("materials/smallicon.jpg") outside circle;}
+#aa{
+    color: red;
+}
