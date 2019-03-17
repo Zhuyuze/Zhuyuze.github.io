@@ -3,6 +3,7 @@ body {
     color:#88bbff;
     background-image: url("materials/darksouls.jpg");
     background-attachment: fixed;
+    line-height: 180%;
     font-family:Georgia, Garamond, serif;
     font-size:16pt;}
 h1, h2, h3 {
@@ -35,6 +36,7 @@ h4 {
 div {
   margin: 20pt;
   padding: 20pt;
+  border-radius: 20px;
   background-color: rgba(64, 64, 64, 0.6);
 }
 #para {
