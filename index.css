@@ -1,0 +1,52 @@
+body {
+
+    color:#88bbff;
+    background-image: url("materials/darksouls.jpg");
+    background-attachment: fixed;
+    font-family:Georgia, Garamond, serif;
+    font-size:16pt;}
+h1, h2, h3 {
+    font-family:Century Gothic, Futura, Verdana, sans-serif;
+    color:rgb(126, 156, 255);
+    background-color:rgba(240, 240, 240, 0);
+    background-repeat: no-repeat;
+}
+h1 {
+    font-size:36pt;
+    font-weight:bold;
+    text-align:center;
+    letter-spacing:0em;}
+h2 {
+  color: #0000aa;
+  margin-left: 24pt;
+    font-size:20pt;
+    font-weight:bold;
+    letter-spacing: 0.2em;}
+h3 {
+  color: #0000ff;
+    font-size: 20pt;
+    letter-spacing: 0.3em;
+}
+h4 {
+  color: #55aaff;
+    font-size: 18pt;
+    letter-spacing: 0.3em;
+}
+div {
+  margin: 20pt;
+  padding: 20pt;
+  background-color: rgba(64, 64, 64, 0.6);
+}
+#para {
+  background-color: #aaaaaa;
+}
+#code {
+    color: rgb(10, 255, 141);
+    font-weight: bold;
+
+    }
+ul li {
+    list-style: url("materials/smallicon.jpg") outside circle;}
+#aa{
+    color: red;
+}
