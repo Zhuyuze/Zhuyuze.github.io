@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta http-equiv="Content-Type" CONTENT="text/html; charset=UTF-8"/>
+            <link rel="shortcut icon" href="materials/icon.jpg"/>
+            <title>Software System Analysis & Design Homework</title>
+            <link rel="stylesheet" type="text/css" href="index.css"/>
+    </head>
+    <body>
+        <h1>Software System Analysis & Design Homework</h1>
+        <br>
+        <h2>Homework 1</h2>
+        <div>
+          <p class="para">
+            <h3>简答题:</h3>
+            <h4>1. 简述瀑布模型, 增量模型, 螺旋模型(含原型方法), 并分析优缺点</h4>
+            <ul>
+              <li>瀑布模型:</li>
+              <li>The waterfall model is a relatively linear sequential design approach for certain areas of engineering design. In software development, it tends to be among the less iterative and flexible approaches, as progress flows in largely one direction ("downwards" like a waterfall) through the phases of conception, initiation, analysis, design, construction, testing, deployment and maintenance.</li>
+              <li>瀑布模型是一个相对线性层序的某些工程领域的设计方法. 在软件开发中, 它倾向与较少迭代和不太灵活的方法, 因为在经过概念, 启动, 分析, 设计, 构建, 测试, 部署和维护的阶段时进度答题上朝一个方向流动.</li>
+              <li>优点:
+                <ul>
+                  <li>在软件生产周期的早期花费的时间可以降低后期的成本。</li>
+                  <li>在通常的实践中，瀑布方法会产生一个项目进度表，前两个阶段投入20-40%的时间，30-40%的时间用于编码，其余的时间用于测试和实现。</li>
+                  <li>它强调文档（如需求文档和设计文档）以及源代码。</li>
+                  <li>瀑布模型提供了一种结构化的方法；模型本身通过离散的、易于理解的和可解释的阶段线性发展，因此易于理解；它还提供了开发过程中易于识别的里程碑。</li>
+                  <li>瀑布模型可以适用于需求和范围固定、产品本身坚固稳定、技术清晰的项目。</li>
+                </ul>
+              </li>
+              <li>缺点:
+                <ul>
+                  <li>客户可能在看到工作的软件之前不知道他们的需求是什么，因此改变他们的需求，导致重新设计、重新开发和重新测试，并增加成本。</li>
+                  <li>设计人员在设计新软件产品或功能时可能不知道未来的困难，在这种情况下，与其坚持不考虑任何新发现的约束、需求或问题的设计，不如修改设计。</li>
+                  <li>在实践中，很难维持系统分析和编程之间的严格分离。</li>
+                </ul>
+              </li>
+              <br>
+              <li>增量模型:</li>
+              <li>The incremental build model is a method of software development where the product is designed, implemented and tested incrementally (a little more is added each time) until the product is finished.</li>
+              <li>增量模型是一种软件方法, 在这种方法中产品被递增地(一次增加一点)设计，完成和测试, 直到完成</li>
+              <li>优点:
+                <ul>
+                  <li>每次迭代后, 会进行回归测试。在这个测试过程中, 可以很快地识别出软件的错误元素, 因为在任何一个迭代中进行较少的更改。</li>
+                  <li>通常比其他软件开发方法更容易测试和调试, 因为在每次迭代中所做的更改相对较小, 这允许对整个产品中的每个元素进行更具针对性和更严格的测试。</li>
+                  <li>客户可以回应功能特性, 并回顾产品是否有任何需要或有用的更改。</li>
+                  <li>初始产品交付更快，成本更低。</li>
+                </ul>
+              </li>
+              <li>缺点:
+                <ul>
+                  <li>产生的成本可能超过预期规划的成本。</li>
+                  <li>随着产品增加额外的功能，可能会出现与系统架构相关的问题，这些问题在早期的原型中并不明显。</li>
+                </ul>
+              </li>
+              <br>
+              <li>螺旋模型:</li>
+              <li>The spiral model is a risk-driven software development process model. Based on the unique risk patterns of a given project, the spiral model guides a team to adopt elements of one or more process models, such as incremental, waterfall, or evolutionary prototyping</li>
+              <li>螺旋模型是一种风险驱动的软件开发过程模型。基于给定项目的独特风险模式，螺旋模型指导团队采用一个或多个过程模型的元素，例如增量、瀑布或进化原型。</li>
+              <li>优点:
+                <ul>
+                  <li>在面对需求功能复杂，可能无法从项目开始就得到明确的规格，开发周期长，用户需求在中途经常发生变化时，有很强的适应性</li>
+                  <li>螺旋模型结合了瀑布模型和快速原型方法，具有这两种方法的优越性能，除此之外，由于其加入了风险分析，有利于进行风险的控制</li>
+                  <li>每个阶段都保证了客户的参与，防止产品偏离客户需求，同时让客户了解进度，及时进行沟通。</li>
+                </ul>
+              </li>
+              <li>缺点:
+                <ul>
+                  <li>螺旋模型由于需要不断的迭代，因此需要消耗更多的成本和人力资源，如果风险分析错误，则可能会遭受到很大的损失</li>
+                  <li>螺旋模型强调风险分析，但说服外部客户接受和相信分析结果并做出相关反应并不容易，因此螺旋模型往往比较适合内部的大规模软件开发。</li>
+                </ul>
+              </li>
+            </ul>
+            <br>
+            <h4>2. 简述统一过程三大特点，与面向对象的方法有什么关系？</h4>
+            三大特点:
+            <ul>
+              <li>用户为中心（描述用户使用产品的故事）</li>
+              <li>架构为重心（软件产品分解的领域最佳实践）</li>
+              <li>风险驱动（早期暴露风险）</li>
+            </ul>
+            在设计阶段，需要将系统组织为具有良好接口的设计包和设计组系统，并体现类的对象之间的作用关系。
+            <br>
+            实现阶段层次化子系统，定义代码组织结构。以组件的形式实践类和对象。在测试集成阶段需要测试类本身的功能和类间作用关系。
+            <h4>3. 简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？</h4>
+            统一过程四个阶段的划分准则是时间维度。RUP中的软件生命周期在时间维度上被分解为四个顺序的阶段： 初始阶段(Inception)、精化阶段(Elaboration)、构建阶段 (Construction) 和产品交付阶(Transition)。每个阶段结束于一 个主要的里程碑(Major Milestone)，并在阶段结尾执行一次评 估以确定这个阶段的目标是否已经满足。如果评估结果令人满 意的话，可以允许项目进入下一个阶段。
+            <ul>
+              <li>初始阶段里程碑: 生命周期目标(Lifecycle Objective) 里程碑，包括一些重要的文档，如：项目构想(Vision)、原始用例模型、原始业务风险评估、一个或者多个原型、原始业务案例等。通过对文档的评审确定用例需求理解正确、项目风险评估合理、阶段计划可行等。</li>
+              <li>精化阶段里程碑: 生命周期体系结构(Lifecycle Architecture) 里程碑， 包括风险分析文档、软件体系结构基线、项目计划、可执行的进化原型、初始版本的用户手册等。通过评审确定软件体系结构已经稳定、高风险的业务需求和技术机制已经解决、修订的项目计划可行等。</li>
+              <li>构建阶段里程碑: 初始运行能力(Initial Operational Capability)里程碑， 包括可以运行的软件产品、用户手册等，它决定了产品是否可以在测试环境中进行部署。此刻，要确定软件、环境、用户是否可以开始系统的运行。</li>
+              <li>产品化阶段/移交阶段: 产品发布(Product Release) 里程碑，确定最终目标是否实现，是否应该开始产品下一个版本的另一个开发周期。在一些情况下这个里程碑可能与下一个周期的初始阶段相重合。</li>
+            </ul>
+            <br>
+            <h4>4. 软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？</h4>
+            利用软件产品范围的弹性，合理规划范围（20%业务决定80%满意度），使得软件生产按固定节奏运行，固定迭代周期、固定开发周期、固定升级周期。
+            <br>
+            好处:
+            <ul>
+              <li>软件项目开发更加规范化，便于项目的管理</li>
+              <li>每个迭代产品在增量（制品是可运行的），利于及时交付使用并反馈，满足用户需求，降低风险</li>
+              <li>固定的迭代周期（等量的人月），利于量化团队/个人生产率，提高企业盈利。</li>
+            </ul>
+          </p>
+        </div>
+
+    </body>
+</html>
