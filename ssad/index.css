@@ -3,6 +3,8 @@ body {
     color:#88bbff;
     background-image: url("materials/darksouls.jpg");
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     line-height: 180%;
     font-family:Georgia, Garamond, serif;
     font-size:16pt;}
@@ -42,13 +44,17 @@ div {
 #para {
   background-color: #aaaaaa;
 }
-#code {
-    color: rgb(10, 255, 141);
-    font-weight: bold;
 
-    }
 ul li {
     list-style: url("materials/smallicon.jpg") outside circle;}
 #aa{
     color: red;
+}
+
+.code {
+  background: rgba(150, 150, 150, 0.3);
+  color: #44ffff;
+  width: 50%;
+  font-size: 12pt;
+  font-family:Sans-serif;
 }

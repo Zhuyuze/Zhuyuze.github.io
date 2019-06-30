@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta http-equiv="Content-Type" CONTENT="text/html; charset=UTF-8"/>
+            <link rel="shortcut icon" href="materials/icon.jpg"/>
+            <title>Software System Analysis & Design Homework</title>
+            <link rel="stylesheet" type="text/css" href="index.css"/>
+    </head>
+    <body>
+        <h1>Software System Analysis & Design Project</h1>
+        <br>
+        <h2>技术报告</h2>
+        <div>
+          <p class="para">
+            <h3>微信小程序界面相关</h3>
+            <h4>1. 主要界面分块布局设计：</h4>
+            <img src="materials/front-4.png"  alt="frontmenu" />
+            <ul>
+              <li>使用四个view进行布局并调整wxss</li>
+              <li>如果遇到一个view被另一个覆盖或重叠，需要将显示在上层的view背景色设为白色，并调整wxss中z-index为较大值</li>
+              <div class="code">
+                .class{
+                  <br>
+                  ...;
+                  <br>
+                  z-index: 2;
+                  <br>
+                }
+              </div>
+              <li>如果需要江某一view设定为位置固定(不可滑动或随页面移动)，需要在wxss中加入样式</li>
+              <div class="code">
+                .class{
+                  <br>
+                  ...
+                  <br>
+                  bottom:0px;
+                  <br>
+                  display: flex;
+                  <br>
+                  position: fixed;
+                  <br>
+                }
+              </div>
+              <li>如果在一行（或一列）中，让几个view均匀分布，表示view内组件之间用空白分开并均匀分布（默认情况view内组件会靠在一起）：</li>
+              <div class="code">
+                .head{
+                  <br>
+                  justify-content: space-between;
+                  <br>
+                  ...
+                  <br>
+                }
+              </div>
+            </ul>
+
+            <h4>2. 评星组件：</h4>
+            <img src="materials/front-7.png"  alt="frontmenu" />
+            <ul>
+              <li>使用两种图片来表示星星亮和灭</li>
+              <li>将5个星星同行显示，并且使用data数据flag来判断星星亮和灭，用css来控制：</li>
+              <div class="code">
+                &lt;text class="score"}&gt; 打分：&lt;/text&gt;
+                <br>
+                &lt;view class="comment1-description"&gt;
+                  <br>
+                  &lt;view class="star-pos" style="display:flex;flex-direction:row;"&gt;
+                    <br>
+                    &lt;view class="stars  {{item.flag&gt;=1? 'on': ''}}"&gt;&lt;/view&gt;
+                    <br>
+                    &lt;view class="stars  {{item.flag&gt;=2? 'on': ''}}"&gt;&lt;/view&gt;
+                    <br>
+                    &lt;view class="stars  {{item.flag&gt;=3? 'on': ''}}"&gt;&lt;/view&gt;
+                    <br>
+                    &lt;view class="stars  {{item.flag&gt;=4? 'on': ''}}"&gt;&lt;/view&gt;
+                    <br>
+                    &lt;view class="stars  {{item.flag&gt;=5? 'on': ''}}"&gt;&lt;/view&gt;
+                    <br>
+                  &lt;/view&gt;
+                  <br>
+                &lt;/view&gt;
+                <br>
+
+                .stars{
+                  <br>
+                  background:url("https://gitee.com/zhuyz3/images/raw/master/star-dark.jpg");
+                  <br>
+                  margin: 3px;
+                  <br>
+                  width: 20rpx;
+                  <br>
+                  height: 20rpx;
+                  <br>
+                  background-size: 20rpx 20rpx;
+                  <br>
+                  transition: 600ms;
+                  <br>
+                }
+                <br>
+                .on{
+                  <br>
+                  background:url("https://gitee.com/zhuyz3/images/raw/master/star.jpg");
+                  <br>
+                  margin: 3px;
+                  <br>
+                  width: 20rpx;
+                  <br>
+                  height: 20rpx;
+                  <br>
+                  background-size: 20rpx 20rpx;
+                  <br>
+                  transition: 1s;
+                  <br>
+                  transform: scale(1,1)
+                  <br>
+                }
+              </div>
+
+              <li>特别要注意的是装星星的容器view需要调整同行显示：</li>
+              <div class="code">
+                .comment1-description{
+                  <br>
+                  display:flex;
+                  <br>
+                  flex-direction:row;
+                  <br>
+                  ...
+                  <br>
+                }
+              </div>
+            </ul>
+
+            <br>
+
+            <h3>数据与逻辑相关</h3>
+            <h4>1. 列表渲染：</h4>
+            <img src="materials/front-16.png"  alt="frontmenu" />
+            <ul>
+              <li>使用wx:for进行列表渲染，在js的data中写数据列表</li>
+              <li>如果遇到多层数组，可以使用wx:for-item定义每层元素名，并分层列表渲染</li>
+              <div class="code">
+                orders: [
+                <br>
+                [{
+                  <br>
+                  image:'image/item-m.jpg',
+                  <br>
+                  name: '雪花酥',
+                  <br>
+                  price: 15.0,
+                  <br>
+                  quantity: 2
+                  <br>
+                }],
+                <br>
+                [{
+                  <br>
+                  image: 'image/item-m.jpg',
+                  <br>
+                  name: '芒果',
+                  <br>
+                  price: 20.0,
+                  <br>
+                  quantity: 3
+                  <br>
+                }],
+                <br>
+                [{
+                  <br>
+                  image: 'image/item-m.jpg',
+                  <br>
+                  name: '雪花酥',<br>
+                  price: 15.0,<br>
+                  quantity: 1<br>
+                },<br>
+                {<br>
+                  image: 'image/item-m.jpg',<br>
+                  name: '芒果',<br>
+                  price: 20.0,<br>
+                  quantity: 1<br>
+                }]<br>
+                ]<br>
+
+                &lt;view wx:for="{{orders}}" class='orders' wx:for-item='outter' wx:for-index='index'&gt;<br>
+
+                  &lt;view wx:for='{{outter}}' class='list' wx:for-item='inner'&gt;<br>
+                    &lt;image src="{{inner.image}}" class='img'&gt;&lt;/image&gt;<br>
+                    &lt;text class='name'&gt;{{inner.name}}&lt;/text&gt;<br>
+                    &lt;text class='price'&gt;  价格: ￥{{inner.price}}  × {{inner.quantity}}&lt;/text&gt;<br>
+                  &lt;/view&gt;<br>
+
+                &lt;/view&gt;<br>
+
+              </div>
+
+              <li>数据若不在一个数组中，而是按相同顺序存储在不同数组中，可以利用wx:for-index来进行相同位置访问</li>
+              <div class="code">
+                create_time: [<br>
+                "2019-06-25T15:59:28",<br>
+                "2019-06-25T15:59:55",<br>
+                "2019-06-25T16:00:34"<br>
+                ],<br>
+                pay_prices: [<br>
+                30,<br>
+                60,<br>
+                35<br>
+                ]<br>
+
+                &lt;view wx:for="{{orders}}" class='orders' wx:for-item='outter' wx:for-index='index'&gt;<br>
+                  &lt;view class="head"&gt;<br>
+                    &lt;text class="head_2"&gt;支付于：{{create_time[index]}}&lt;/text&gt;<br>
+                  &lt;/view><br>
+
+                  &lt;text class="total_price"&gt;总价： {{pay_prices[index]}}&lt;/text&gt;<br>
+
+                &lt;/view&gt;<br>
+
+              </div>
+              <li>使用wx:key来对数据进行排序并避免重复渲染，提高效率</li>
+              <div class="code">
+                }&lt;view class="aside"&gt;<br>
+                  }&lt;view class="{{tabIndex === index ? 'menu active' : 'menu'}}" wx:for="{{menus}}" wx:key="{{item.id}}" data-index="{{index}}" bindtap='tabMenu'&gt;{{item.menu}}<br>
+                  }&lt;/view&gt;<br>
+                }&lt;/view&gt;
+
+              </div>
+            </ul>
+
+            <h4>2. 数据交互：</h4>
+
+            <ul>
+              <li>由于微信小程序列表渲染使用绑定，所以交互比较简单，只需要发送请求后更改data数据即可</li>
+              <li>切换类别时：</li>
+              <div class="code">
+                requestmenudata: function (category) {//category在data中，用户切换侧边栏时记录index<br>
+                  wx.request({              //向服务器请求该index的菜单目录<br>
+                    url: 'v1/order/<:rid>',<br>
+                    method: 'GET',<br>
+                    header: {<br>
+                      'type': category<br>
+                    },<br>
+                    success(res) {<br>
+                      console.log(res.data);<br>
+                      this.setdata({          //将菜单目录data设置为返回的内容<br>
+                        items: res<br>
+                      });<br>
+                    }<br>
+                  })<br>
+                }
+              </div>
+              <li>提交数据时获取本地数据并发送即可</li>
+              <img src="materials/front-8.png"  alt="frontmenu" />
+              <div class="code">
+                submit: function (event) {//event表示点击事件<br>
+                  str = event.target.dataset.text;//表示点击时间发生的view中的文本（输入评论<br>
+                  this.setdata({<br>
+                    tempcomment: str<br>
+                  });<br>
+                  sendcomments(str);<br>
+                }<br>
+                sendcomments: function (str) {//发送当前评论给服务器<br>
+                  wx.request({<br>
+                    url: '/v1/comment/<:rid>',<br>
+                    method: 'POST',     //使用post方法<br>
+                    header: {           //header中写入评论<br>
+                      uid: 1,<br>
+                      content: str<br>
+                    },<br>
+                    success(res) {<br>
+                      console.log(res.data);<br>
+                    }<br>
+                  })<br>
+                }
+
+              </div>
+
+            </ul>
+
+            <h4>3. 跳转页面方式：</h4>
+
+            <ul>
+              <li>wx.redirectTo: 表示关闭当前页面，前往url页面，无法返回</li>
+              <li>wx.navegateTo: 表示当前页面不动，前往url页面，下一个页面会有左上角返回键(见上方订单和评价页面)</li>
+              <li>根据这两个功能，来到菜单之前的注册，欢迎页面使用redirectTo，菜单页面之后的购物车，评论，订单页面使用navigateTo</li>
+
+
+            </ul>
+
+            <h4>4. 调用官方api获取个人信息：</h4>
+
+            <div class="code">
+              setTimeout(function () {<br>
+                wx.redirectTo({<br>
+                  url: '../menu/menu',<br>
+                })<br>
+              }, 3000);<br>
+              if (app.globalData.userInfo) {<br>
+                this.setData({<br>
+                  userInfo: app.globalData.userInfo,<br>
+                  hasUserInfo: true<br>
+                })<br>
+              } else if (this.data.canIUse) {<br>
+                // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回<br>
+                // 所以此处加入 callback 以防止这种情况<br>
+                app.userInfoReadyCallback = res =&gt; {<br>
+                  this.setData({<br>
+                    userInfo: res.userInfo,<br>
+                    hasUserInfo: true<br>
+                  })<br>
+                }<br>
+              } else {<br>
+                // 在没有 open-type=getUserInfo 版本的兼容处理<br>
+                wx.getUserInfo({<br>
+                  success: res =&gt; {<br>
+                    app.globalData.userInfo = res.userInfo<br>
+                    this.setData({<br>
+                      userInfo: res.userInfo,//userInvo.avatarUrl为头像url, userInfo.nickName为昵称<br>
+                      hasUserInfo: true<br>
+                    })<br>
+                  }<br>
+                })<br>
+              }
+            </div>
+
+          </p>
+        </div>
+
+    </body>
+</html>
